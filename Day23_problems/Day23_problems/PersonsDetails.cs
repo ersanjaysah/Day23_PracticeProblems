@@ -84,7 +84,9 @@ namespace Day23_problems
             else
             {
 
+               Console.WriteLine("Total number of Contacts are: " + contacts.Count);// count by city
                 Console.WriteLine("Displaying the person Details by City: ");
+
                 int temp = 1;
                 foreach (Contacts contact in contacts) //will give all the persons details by giving city name
                 {
@@ -115,7 +117,7 @@ namespace Day23_problems
             }
             else
             {
-
+                Console.WriteLine("Total Number of Contacts are: " + contacts1.Count);// count by state
                 Console.WriteLine("Displaying the Contact by State: ");
                 int count = 1;
                 foreach (Contacts contact in contacts1) //will give all the person details by searching state name
