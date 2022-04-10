@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Day23_problems
 {
@@ -14,7 +12,7 @@ namespace Day23_problems
         {
             if (records.Count == 0)
             {
-                Console.WriteLine("AddressBook is empty, please add some records or Address");
+                Console.WriteLine("AddressBook is empty, please add some records");
             }
             int count = 1;
             foreach (var person in records.ToList())  
@@ -37,7 +35,7 @@ namespace Day23_problems
         {
             Contacts contact = new Contacts();
 
-            Console.WriteLine("Enter First Name of The Contact to checkfor Duplication: ");
+            Console.WriteLine("Enter First Name to check Duplication: ");
             string name = Console.ReadLine();
 
             bool flag = records.Any(x => string.Equals(x.firstName, name));// checking for Duplication
@@ -70,69 +68,24 @@ namespace Day23_problems
                 records.Add(contact);
             }
         }
-
-        public void CheckPersonsNameByCity()  //To Serch the person by city name
+        public void SortContact() //sorting contact
         {
-            Console.WriteLine("Enter the city Name to find person ");
-            string personcity = Console.ReadLine();
-            List<Contacts> contacts = records.FindAll(x => (x.city == personcity));
+            List<Contacts> contacts = records.OrderBy(y => y.firstName).ToList();// sorting the list
+            Console.WriteLine("Displaying Sorted Contact list in Alphabetic Order");
+            int temp = 1;
 
-            if (contacts.Count == 0)             //Checking person name
+            foreach (Contacts contact in contacts) //Displaying List
             {
-                Console.WriteLine("No person found in that City");
-            }
-            else
-            {
-
-               Console.WriteLine("Total number of Contacts are: " + contacts.Count);// count by city
-                Console.WriteLine("Displaying the person Details by City: ");
-
-                int temp = 1;
-                foreach (Contacts contact in contacts) //will give all the persons details by giving city name
-                {
-                    Console.WriteLine("Record: " + temp);
-                    Console.WriteLine("First name is: " + contact.firstName);
-                    Console.WriteLine("Last name is: " + contact.lastName);
-                    Console.WriteLine("Address : " + contact.address);
-                    Console.WriteLine("City : " + contact.city);
-                    Console.WriteLine("State : " + contact.state);
-                    Console.WriteLine("Email : " + contact.email);
-                    Console.WriteLine("Zip code : " + contact.zip);
-                    Console.WriteLine("Phone Number : " + contact.phoneNumber);
-                    temp++;
-                }
-            }
-        }
-
-        public void CheckPersonNameByState()   //To Search the person by State name
-        {
-
-            Console.WriteLine("Please enter the State to find person name: ");
-            string Personstate = Console.ReadLine();
-            List<Contacts> contacts1 = records.FindAll(y => (y.state == Personstate));
-
-            if (contacts1.Count == 0)  //Checking the person name
-            {
-                Console.WriteLine("No person found in that state");
-            }
-            else
-            {
-                Console.WriteLine("Total Number of Contacts are: " + contacts1.Count);// count by state
-                Console.WriteLine("Displaying the Contact by State: ");
-                int count = 1;
-                foreach (Contacts contact in contacts1) //will give all the person details by searching state name
-                {
-                    Console.WriteLine("Record:-" + count);
-                    Console.WriteLine("First name is: " + contact.firstName);
-                    Console.WriteLine("Last name is: " + contact.lastName);
-                    Console.WriteLine("Address : " + contact.address);
-                    Console.WriteLine("City : " + contact.city);
-                    Console.WriteLine("State : " + contact.state);
-                    Console.WriteLine("Email : " + contact.email);
-                    Console.WriteLine("Zip code : " + contact.zip);
-                    Console.WriteLine("Phone Number : " + contact.phoneNumber);
-                    count++;
-                }
+                Console.WriteLine("\nRecord: " + temp);
+                Console.WriteLine("First name is: " + contact.firstName);
+                Console.WriteLine("Last name is: " + contact.lastName);
+                Console.WriteLine("Address : " + contact.address);
+                Console.WriteLine("City : " + contact.city);
+                Console.WriteLine("State : " + contact.state);
+                Console.WriteLine("Email : " + contact.email);
+                Console.WriteLine("Zip code : " + contact.zip);
+                Console.WriteLine("Phone Number : " + contact.phoneNumber);
+                temp++;
             }
         }
     }

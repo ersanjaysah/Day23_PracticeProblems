@@ -26,8 +26,7 @@ namespace Day23_problems
             {
                 Console.WriteLine("\nEnter 1 to Add persons details");
                 Console.WriteLine("Enter 2 for Display");
-                Console.WriteLine("Enter 3 to search the person's by city");
-                Console.WriteLine("Enter 4 to search the person's by State");
+                Console.WriteLine("Enter 3 to Sort the contct");
                 int choice = int.Parse(Console.ReadLine()); // here i am converting into int.
 
                 switch (choice)// checking
@@ -39,10 +38,7 @@ namespace Day23_problems
                         records.DetailsOfPerson();
                         break;
                     case 3:
-                        records.CheckPersonsNameByCity();
-                        break;
-                    case 4:
-                        records.CheckPersonNameByState();
+                        records.SortContact();
                         break;
                     default:
                         Console.WriteLine("Pleasee select valid input");
