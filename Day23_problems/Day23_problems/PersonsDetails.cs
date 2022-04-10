@@ -19,7 +19,7 @@ namespace Day23_problems
             int count = 1;
             foreach (var person in records.ToList())  
             {
-                Console.WriteLine("\n\nRecord - " + count);
+                Console.WriteLine("\nRecord - " + count);
                 Console.WriteLine("First Name : " + person.firstName);
                 Console.WriteLine("Last Name : " + person.lastName);
                 Console.WriteLine("Address : " + person.address);
@@ -33,7 +33,7 @@ namespace Day23_problems
             }
         }
 
-        public void AddRecord() // Adding records
+        public void AddRecord() // Adding records of a person .
         {
             Contacts contact = new Contacts();
 
@@ -48,7 +48,7 @@ namespace Day23_problems
             }
             else
             {
-               Console.WriteLine("No Duplication found ");
+               Console.WriteLine("No Duplication found ");//if person name not found
 
                 Console.WriteLine("Enter your First Name : ");
                 contact.firstName = Console.ReadLine();
@@ -71,7 +71,7 @@ namespace Day23_problems
             }
         }
 
-        public void CheckPersonsNameByCity()  //Serch the person by city name
+        public void CheckPersonsNameByCity()  //To Serch the person by city name
         {
             Console.WriteLine("Enter the city Name to find person ");
             string personcity = Console.ReadLine();
@@ -83,17 +83,26 @@ namespace Day23_problems
             }
             else
             {
-                Console.WriteLine("Person details are: ");
-                foreach (Contacts contact in contacts)
+
+                Console.WriteLine("Displaying the person Details by City: ");
+                int temp = 1;
+                foreach (Contacts contact in contacts) //will give all the persons details by giving city name
                 {
-                    Console.WriteLine("\nFirst name is: " + contact.firstName);
+                    Console.WriteLine("Record: " + temp);
+                    Console.WriteLine("First name is: " + contact.firstName);
                     Console.WriteLine("Last name is: " + contact.lastName);
+                    Console.WriteLine("Address : " + contact.address);
                     Console.WriteLine("City : " + contact.city);
+                    Console.WriteLine("State : " + contact.state);
+                    Console.WriteLine("Email : " + contact.email);
+                    Console.WriteLine("Zip code : " + contact.zip);
+                    Console.WriteLine("Phone Number : " + contact.phoneNumber);
+                    temp++;
                 }
             }
         }
 
-        public void CheckPersonNameByState()   //Search the person by State name
+        public void CheckPersonNameByState()   //To Search the person by State name
         {
 
             Console.WriteLine("Please enter the State to find person name: ");
@@ -106,12 +115,21 @@ namespace Day23_problems
             }
             else
             {
-                Console.WriteLine("Person details are: ");
-                foreach (Contacts contact in contacts1)
+
+                Console.WriteLine("Displaying the Contact by State: ");
+                int count = 1;
+                foreach (Contacts contact in contacts1) //will give all the person details by searching state name
                 {
-                    Console.WriteLine("\nFirst name is: " + contact.firstName);
+                    Console.WriteLine("Record:-" + count);
+                    Console.WriteLine("First name is: " + contact.firstName);
                     Console.WriteLine("Last name is: " + contact.lastName);
+                    Console.WriteLine("Address : " + contact.address);
+                    Console.WriteLine("City : " + contact.city);
                     Console.WriteLine("State : " + contact.state);
+                    Console.WriteLine("Email : " + contact.email);
+                    Console.WriteLine("Zip code : " + contact.zip);
+                    Console.WriteLine("Phone Number : " + contact.phoneNumber);
+                    count++;
                 }
             }
         }

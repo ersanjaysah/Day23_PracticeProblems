@@ -30,7 +30,7 @@ namespace Day23_problems
                 Console.WriteLine("Enter 4 to search the person's by State");
                 int choice = int.Parse(Console.ReadLine()); // here i am converting into int
 
-                switch (choice)
+                switch (choice)// checking
                 {
                     case 1:
                         records.AddRecord();
